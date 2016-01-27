@@ -10,7 +10,8 @@
         $routeProvider
             .when('/main', {
                 templateUrl: 'main.html',
-                controller: 'mainController'
+                controller: 'mainController',
+                controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/main' });
     }
