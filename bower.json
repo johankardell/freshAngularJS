@@ -1,0 +1,28 @@
+{
+  "name": "angularJS",
+  "main": [
+    "/dist/angularJS.min.js",
+    "/dist/angularJS.min.css"
+  ],
+  "version": "0.1.0",
+  "description": "angularJS",
+  "authors": [
+    "Johan Kardell, Softhouse"
+  ],
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "klei.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.8"
+  }
+}
