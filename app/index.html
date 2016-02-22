@@ -8,9 +8,17 @@
     <script src="list.controller.js"></script>
 </head>
 
-<body>
+<body ng-controller='listController' ng-cloak>
     <h1>AngularJS</h1>
-    <div>
+    <div ng-if="enableFilter">
+        <input type="text" ng-model="search" />
+    </div>
+    <div ng-if="enableAdd">
+        <input type="text" ng-model="addedName"></input>
+        <button ng-click="addName(addedName)">Add</button>
+    </div>
+    <div ng-repeat="name in names | orderBy: name |filter: search">
+        {{ name }}
     </div>
 </body>
 
