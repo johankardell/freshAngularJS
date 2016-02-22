@@ -8,10 +8,10 @@
     
     function config($routeProvider){
         $routeProvider
-            .when('/main', {
-                templateUrl: 'main.html',
-                controller: 'mainController'
+            .when('/list', {
+                templateUrl: 'list.html',
+                controller: 'listController'
             })
-            .otherwise({ redirectTo: '/main' });
+            .otherwise({ redirectTo: '/list' });
     }
 } (angular.module('app.angularJS', ['ngRoute'])));
