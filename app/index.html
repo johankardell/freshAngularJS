@@ -6,19 +6,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="list.controller.js"></script>
+    <script src="user.controller.js"></script>
 </head>
 
-<body ng-controller='listController' ng-cloak>
-    <h1>AngularJS</h1>
-    <div ng-if="enableFilter">
-        <input type="text" ng-model="search" />
-    </div>
-    <div ng-if="enableAdd">
-        <input type="text" ng-model="addedName"></input>
-        <button ng-click="addName(addedName)">Add</button>
-    </div>
-    <div ng-repeat="name in names | orderBy: name |filter: search">
-        {{ name }}
+<body>
+    <div ng-view ng-cloak>
     </div>
 </body>
 
