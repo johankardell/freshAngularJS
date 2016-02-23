@@ -7,5 +7,6 @@
 
     function userController($scope, $routeParams) {
         $scope.user = $routeParams.username;
+
     }
 } (angular.module('app.angularJS')));
