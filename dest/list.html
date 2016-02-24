@@ -1,0 +1,11 @@
+<h1>AngularJS</h1>
+<div ng-if="enableFilter">
+    <input type="text" ng-model="search" />
+</div>
+<div ng-if="enableAdd">
+    <input type="text" ng-model="addedName"></input>
+    <button ng-click="addName(addedName)">Add</button>
+</div>
+<div ng-repeat="name in getNames() | orderBy: name |filter: search">
+    <a ng-href="#/user/{{name}}">{{ name }}</a>
+</div>

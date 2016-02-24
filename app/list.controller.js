@@ -3,17 +3,29 @@
 (function (module) {
     'use strict';
     module.controller('listController', listController);
-    listController.$inject = ['$scope'];
+    listController.$inject = ['$scope', 'nameFactory'];
 
-    function listController($scope) {
+    function listController($scope, nameFactory) {
         $scope.message = 'Hello world';
-        $scope.names = ['Tommy', 'Anders', 'Peter'];
         $scope.enableFilter = false;
         $scope.enableAdd = true;
         $scope.addName = addName;
-        
-        function addName(name){
-            $scope.names.push(name);
+        $scope.getNames = getNames;
+
+        function addName(name) {
+            nameFactory.addName(name);
         }
+
+        function getNames() {
+            var promise = nameFactory.fetchNames();
+            
+            // then or success
+            promise.then(function(data){
+                $scope.names = data; 
+            });
+        }
+        
+        init();
+        
     }
 } (angular.module('app.angularJS')));

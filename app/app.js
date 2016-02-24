@@ -8,6 +8,7 @@
 
     function config($routeProvider) {
         $routeProvider
+            
             .when('/list', {
                 templateUrl: 'list.html',
                 controller: 'listController'
@@ -16,6 +17,6 @@
                 templateUrl: 'user.html',
                 controller: 'userController'
             })
-            .otherwise({ redirectTo: '/list' });
+            .otherwise({ redirectTo: '/' });
     }
 } (angular.module('app.angularJS', ['ngRoute'])));

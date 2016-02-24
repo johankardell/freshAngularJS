@@ -10,7 +10,6 @@ var gulp   = require('gulp'),
 
 // define the default task and add the watch task to it
 gulp.task('default', ['serve', 'watch']);
-
 gulp.task('serve', function() {
   connect.server({
       livereload: true,

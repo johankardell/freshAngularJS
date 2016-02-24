@@ -7,6 +7,8 @@
 
     function userController($scope, $routeParams) {
         $scope.user = $routeParams.username;
-
+        $scope.back = function(){
+            $location.path('/');
+        }
     }
 } (angular.module('app.angularJS')));
