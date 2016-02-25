@@ -10,22 +10,25 @@
         $scope.enableFilter = false;
         $scope.enableAdd = true;
         $scope.addName = addName;
-        $scope.getNames = getNames;
+        // $scope.getNames = getNames;
+        // $scope.names = [];
 
         function addName(name) {
             nameFactory.addName(name);
         }
 
         function getNames() {
-            var promise = nameFactory.fetchNames();
-            
-            // then or success
-            promise.then(function(data){
-                $scope.names = data; 
+            var promise = nameFactory.getNames();
+
+            promise.success(function (data) {
+                $scope.names = data;
             });
         }
-        
-        init();
-        
+
+        function activate() {
+            getNames();
+        }
+
+        activate();
     }
 } (angular.module('app.angularJS')));

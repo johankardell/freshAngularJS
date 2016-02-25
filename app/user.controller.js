@@ -3,11 +3,13 @@
 (function (module) {
     'use strict';
     module.controller('userController', userController);
-    userController.$inject = ['$scope', '$routeParams'];
+    userController.$inject = ['$scope', '$routeParams', '$location'];
 
-    function userController($scope, $routeParams) {
+    function userController($scope, $routeParams, $location) {
         $scope.user = $routeParams.username;
-        $scope.back = function(){
+        $scope.back = back;
+        
+        function back(){
             $location.path('/');
         }
     }

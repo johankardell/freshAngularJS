@@ -6,26 +6,17 @@
     nameFactory.$inject = ['$http'];
 
     function nameFactory($http) {
-        //var names = [];
-        
         return {
-            fetchNames: fetchNames,
+            getNames: getNames,
             addName: addName
         };
 
         function getNames() {
-            return fetchNames();
+            return $http.get('/names.json');
         }
 
         function addName(name) {
-            // names.push(name);
             return $http.post('names.json', name);
         }
-
-        function fetchNames() {
-            return $http.get('/names.json');
-        }
-        
-        
     }
 } (angular.module('app.angularJS')));
