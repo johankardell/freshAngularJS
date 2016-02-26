@@ -6,6 +6,7 @@
     nameFactory.$inject = ['$http'];
 
     function nameFactory($http) {
+       
         return {
             getNames: getNames,
             addName: addName

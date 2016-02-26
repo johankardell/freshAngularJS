@@ -10,9 +10,7 @@
         $scope.enableFilter = false;
         $scope.enableAdd = true;
         $scope.addName = addName;
-        // $scope.getNames = getNames;
-        // $scope.names = [];
-
+        
         function addName(name) {
             nameFactory.addName(name);
         }
