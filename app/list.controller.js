@@ -11,8 +11,8 @@
         $scope.enableAdd = true;
         $scope.addName = addName;
         
-        function addName(name) {
-            nameFactory.addName(name);
+        function addName() {
+            nameFactory.addName($scope.addedName);
         }
 
         function getNames() {
